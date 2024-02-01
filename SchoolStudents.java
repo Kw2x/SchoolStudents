@@ -4,20 +4,20 @@ public class SchoolStudents {
     public static void main(String[] args)
     {
         String userName;
-        int answer = 0;
+        //int answer;
         Scanner sc = new Scanner(System.in);
+        Scanner num = new Scanner(System.in);
         System.out.println("Hello, please enter a name");
         userName = sc.nextLine();
         System.out.println("Welcome to school " + userName);
+        System.out.println("First number: ");
+        int num1 = num.nextInt();
+        System.out.println("Second number: ");
+        int num2 = num.nextInt();
+        int answer = num1 + num2;
+        System.out.println("The answer to " + num1 + " + " + num2 + " is " + answer);
         sc.close();
-        Scanner an = new Scanner(System.in);
-        answer = an.nextInt();
-        System.out.println(userName + " what is 8 + 2 ?");
-        if(answer == 10) {
-            System.out.println("that is correct");
-        }
-        else
-            System.out.println("that is not correct");
-        an.close();
+        num.close();
+
     }
 }
