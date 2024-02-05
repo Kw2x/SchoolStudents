@@ -1,11 +1,16 @@
+import java.util.Random;
 import java.util.Scanner; // importing Scanner Class
  public class SchoolStudents {
      public static void main(String[] args) {
          // local variables
          String userName;
-         int num1 = 4; // hard coded the int
-         int num2 = 9; // hard coded the int
-         int answer; // keep  this dynamic to check against
+
+         //Random numbers
+         Random random = new Random();
+         int num1; // dynamic to take randoms
+         int num2; // dynamic to take randoms
+         num1 = random.nextInt(10) + 1;
+         num2 = random.nextInt(10) + 1;
 
          //Hello Message and getting User Input
          Scanner un = new Scanner(System.in); // Scanner to hold userName
