@@ -1,23 +1,51 @@
-import java.util.Scanner;
+import java.util.Scanner; // importing Scanner Class
 
-public class SchoolStudents {
+ class SchoolStudents {
     public static void main(String[] args)
     {
+        // local variables
         String userName;
-        //int answer;
-        Scanner sc = new Scanner(System.in);
-        Scanner num = new Scanner(System.in);
-        System.out.println("Hello, please enter a name");
-        userName = sc.nextLine();
-        System.out.println("Welcome to school " + userName);
-        System.out.println("First number: ");
-        int num1 = num.nextInt();
-        System.out.println("Second number: ");
-        int num2 = num.nextInt();
-        int answer = num1 + num2;
-        System.out.println("The answer to " + num1 + " + " + num2 + " is " + answer);
-        sc.close();
-        num.close();
+        int num1 = 4; // hard coded the int
+        int num2 = 9; // hard coded the int
+        int answer; // keep  this dynamic to check against
 
+        Scanner un = new Scanner(System.in); // Scanner to hold userName
+        Scanner an = new Scanner(System.in); // Scanner to hold the answer
+        System.out.println("Hello, please enter a name");
+        userName = un.nextLine();
+        System.out.println("Welcome to school " + userName);
+
+
+        // Question 1
+        String question = ("what is " +  num1 + "+" + num2 + "?");
+        System.out.println(question);
+        answer = an.nextInt();
+        System.out.println("The answer  is " + (num1 + num2)); // calculation
+        System.out.println("You answered " + answer);// validation
+
+
+        // Question 2
+        question = ("what is " +  num1 + "-" + num2 + "?");
+        System.out.println(question);
+        answer = an.nextInt();
+        System.out.println("The answer  is " + (num1 - num2));
+        System.out.println("You answered " + answer);
+
+
+        // Question 3
+        question = ("what is " +  num1 + "*" + num2 + "?");
+        System.out.println(question);
+        answer = an.nextInt();
+        System.out.println("The answer  is " + (num1 * num2));
+        System.out.println("You answered " + answer);
+
+
+        // Question 4
+        question = ("what is " +  num1 + "/" + num2 + "?");
+        System.out.println(question);
+        answer = an.nextInt();
+        System.out.println("The answer  is " + (num1 / num2));
+        System.out.println("You answered " + answer);
+        un.close();
     }
 }
