@@ -1,9 +1,13 @@
 import java.util.Random;
 import java.util.Scanner; // importing Scanner Class
- public class SchoolStudents {
+import java.util.concurrent.Flow;
+
+public class SchoolStudents {
      public static void main(String[] args) {
+
          // local variables
          String userName;
+         int score = 0;
 
          // Random numbers
          Random random = new Random();
@@ -12,6 +16,7 @@ import java.util.Scanner; // importing Scanner Class
          num1 = random.nextInt(10) + 1;
          num2 = random.nextInt(10) + 1;
 
+
          //Hello Message and getting User Input
          Scanner un = new Scanner(System.in); // Scanner to hold userName
          Scanner an = new Scanner(System.in); // Scanner to hold the answer
@@ -19,39 +24,64 @@ import java.util.Scanner; // importing Scanner Class
          userName = un.nextLine();
          System.out.println("Welcome to school " + userName);
 
-
          // Question 1
          printQuestion(num1, "+", num2);
          int userAnswer = an.nextInt();
          int correctAnswer = num1 + num2;
          answerVerification(userAnswer, correctAnswer);
-         scoreCounter(userAnswer, correctAnswer);
-         System.out.println(userAnswer == correctAnswer);
+
+         if (userAnswer == correctAnswer){
+             score = score + 1;
+             System.out.println("Your score is " + score);
+         }
+         else {
+             System.out.println("Your score is " + (score));
+         }
+             System.out.println(userAnswer == correctAnswer);
 
          // Question 2
          printQuestion(num1, "-", num2);
          userAnswer = an.nextInt();
          correctAnswer = num1 - num2;
-         scoreCounter(userAnswer, correctAnswer);
-         answerVerification(userAnswer, correctAnswer);
-         System.out.println(userAnswer == correctAnswer);
 
+         if (userAnswer == correctAnswer){
+             score = score + 1;
+             System.out.println("Your score is " + score);
+         }
+         else {
+             System.out.println("Your score is " + (score));
+         }
+
+         answerVerification(userAnswer, correctAnswer);
 
          // Question 3
          printQuestion(num1, "*", num2);
          userAnswer = an.nextInt();
          correctAnswer = num1 * num2;
-         scoreCounter(userAnswer, correctAnswer);
+
+         if (userAnswer == correctAnswer){
+             score = score + 1;
+             System.out.println("Your score is " + score);
+         }
+         else {
+             System.out.println("Your score is " + (score));
+         }
+
          answerVerification(userAnswer, correctAnswer);
-         System.out.println(userAnswer == correctAnswer);
 
          // Question 4
          printQuestion(num1, "/", num2);
          userAnswer = an.nextInt();
          correctAnswer = num1 / num2;
-         scoreCounter(userAnswer, correctAnswer);
+         if (userAnswer == correctAnswer){
+             score = score + 1;
+             System.out.println("Your score is " + score);
+         }
+         else {
+             System.out.println("Your score is " + (score));
+         }
          answerVerification(userAnswer, correctAnswer);
-         System.out.println(userAnswer == correctAnswer);
+         printScore(userName, score);
          un.close();
      }
 
@@ -63,15 +93,7 @@ import java.util.Scanner; // importing Scanner Class
          System.out.println("The answer  is " + correctAnswer);
          System.out.println("You answered " + userAnswer);
      }
-     private static void scoreCounter(int userAnswer, int correctAnswer) {
-         int score = 0;
-         if (userAnswer == correctAnswer) {
-             score = score + 1;
-             System.out.println("Your score is " + score);
-         } else {
-             System.out.println("Your score is " + (score = score));
-         }
+     public static void printScore(String username, int score){
+         System.out.println("Thanks for playing " + username + " your score is " + score + " out of 5");
      }
- }
-
-
+  }
